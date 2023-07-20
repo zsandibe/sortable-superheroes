@@ -1,0 +1,110 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(99, 86, 86);
+}
+
+header {
+  background-color: rgb(169, 158, 158);
+  color: #fff;
+  padding: 20px;
+}
+
+header h1 {
+  text-align: center;
+  margin: 5;
+  font-size: 45px;
+  transition: color 0.3s ease;
+  font-family: Coronetscript, cursive;
+}
+
+header h1:hover {
+  color: var(--random-color);
+}
+
+.search-container {
+  margin-top: 10px;
+}
+
+.search-container label,
+.search-container input,
+.search-container select {
+  font-size: 16px;
+}
+
+.search-container input[type="text"],
+.search-container select {
+  margin-left: 10px;
+  padding: 5px;
+  width: 200px;
+}
+
+main {
+  padding: 20px;
+}
+
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.page-size select,
+.sort-controls .sort-column button {
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.sort-controls .sort-column button {
+  margin-left: 10px;
+}
+
+.sort-controls .sort-column button.active {
+  text-decoration: underline;
+}
+
+#hero-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#hero-table th,
+#hero-table td {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  border: 5px solid #ccc;
+}
+
+#hero-table th {
+  background-color: rgb(169, 158, 158);
+  font-weight: bold;
+  
+}
+
+#hero-data img {
+  width: 105%;
+  max-width: 80px;
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#pagination a {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: #333;
+}
+
+#pagination a.active {
+  background-color: #333;
+  color: #fff;
+}

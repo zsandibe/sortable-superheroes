@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sortable</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Superhero sortable</h1>
+  </header>
+
+  <main>
+    <div class="table-controls">
+      <div class="page-size">
+        <label for="page-size">Page Size:</label>
+        <select id="page-size">
+          <option value="10">10</option>
+          <option value="20" selected>20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="all">All</option>
+        </select>
+      </div>
+      <div class="search-container">
+        <label for="search">Search:</label>
+        <input type="text" id="search" placeholder="Enter hero name">
+      </div>
+      <!-- <div class="sort-controls">
+          <div class="sort-column">
+          <span>Sort By:</span>
+          <button class="asc active" data-column="name">Name</button>
+          <button class="desc" data-column="powerstats.intelligence">Intelligence</button>
+          <button class="desc" data-column="powerstats.strength">Strength</button>
+          <button class="desc" data-column="powerstats.speed">Speed</button>
+          <button class="desc" data-column="powerstats.durability">Durability</button>
+          <button class="desc" data-column="powerstats.power">Power</button>
+          <button class="desc" data-column="powerstats.combat">Combat</button>
+          <button class="desc" data-column="appearance.height">Height</button>
+          <button class="desc" data-column="appearance.weight">Weight</button>
+        </div>
+      </div> -->
+    </div>
+
+    <table id="hero-table">
+      <thead>
+        <th>Icon</th>
+          <script>
+            const columns = [
+              { dataField: 'name', label: 'Name' },
+              { dataField: 'biography.fullName', label: 'Full Name' },
+              { dataField: 'powerstats.intelligence', label: 'Intelligence' },
+              { dataField: 'powerstats.strength', label: 'Strength' },
+              { dataField: 'powerstats.speed', label: 'Speed' },
+              { dataField: 'powerstats.durability', label: 'Durability' },
+              { dataField: 'powerstats.power', label: 'Power' },
+              { dataField: 'powerstats.combat', label: 'Combat' },
+              { dataField: 'appearance.race', label: 'Race' },
+              { dataField: 'appearance.gender', label: 'Gender' },
+              { dataField: 'appearance.height', label: 'Height' },
+              { dataField: 'appearance.weight', label: 'Weight' },
+              { dataField: 'biography.placeOfBirth', label: 'Place of Birth' },
+              { dataField: 'biography.alignment', label: 'Alignment' }
+            ];
+            columns.forEach((column) => {
+              document.write(
+                `<th>
+                  <div class="sort-controls">
+                    <div class="sort-column">
+                      <button class="desc" data-column="${column.dataField}" style="text-decoration: none;border : 0px; background: transparent;font-weight: 600;">${column.label}</button>
+                    </div>
+                  </div>
+                </th>`
+              );
+            });
+          </script>
+      </thead>
+      <tbody id="hero-data"></tbody>
+    </table>
+
+    <div id="pagination"></div>
+  </main>
+  <script>
+    const header = document.querySelector('header');
+    setInterval(() => {
+      const randomColor = generateRandomColor();
+      header.style.color = randomColor;
+    }, 2000);
+  
+    function generateRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+  </script>
+  
+  <script src="sortable.js"></script>
+</body>
+
+</html>
